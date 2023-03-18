@@ -21,9 +21,10 @@ echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks 
 for file in ${files[@]}; do
-    if [[ "$file" =~ ^(make.sh|macosdefaults.sh|wallpapers)$ ]]; then continue ; fi
-    echo "Moving any existing dotfiles from ~ to $olddir"
+    if [[ "$file" =~ ^(.gitignore|make.sh|macosdefaults.sh|wallpapers)$ ]]; then continue ; fi
     mv ~/$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+echo "Old files moved to $olddir"
