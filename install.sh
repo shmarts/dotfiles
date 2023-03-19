@@ -14,6 +14,7 @@ brew tap homebrew/cask-fonts
 # Brew formulae
 brew install starship
 brew install exa
+brew install lazygit
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
 
