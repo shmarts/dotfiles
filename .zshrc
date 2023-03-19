@@ -11,6 +11,7 @@
 setopt autocd
 
 source $HOME/.env.sh
+source $DOTFILES/aliases.zsh
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
