@@ -13,12 +13,16 @@ brew tap homebrew/cask-fonts
 
 # Brew formulae
 brew install exa
+brew install jq
 brew install starship
 brew install sketchybar
 brew install lazygit
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install go
+brew install pnpm
 brew install fnm
+brew install mprocs
 
 # Brew casks
 brew install --cask font-fira-code-nerd-font
