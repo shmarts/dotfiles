@@ -1,0 +1,56 @@
+# add_newline = false
+
+# [character]
+# success_symbol = '[ >](bold green)'
+# error_symbol = "[ x](bold red)"
+# vicmd_symbol = "[ V](bold green)"
+
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$rust\
+$golang\
+$cmd_duration$jobs\
+$line_break\
+$character"""
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style) '
+read_only = " "
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+# style = "bright-black"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'	
+
+[git_metrics]
+disabled = false
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+[fill]
+symbol = " "
+
+[nodejs]
+format = " [node ($version)]($style)"
+
+[rust]
+format = " [rust ($version)]($style)"
+
+[golang]
+format = " [go $version]($style)"
+
+[package]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
