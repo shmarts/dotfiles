@@ -18,6 +18,7 @@ brew install sketchybar
 brew install lazygit
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
+brew install fnm
 
 # Brew casks
 brew install --cask font-fira-code-nerd-font
