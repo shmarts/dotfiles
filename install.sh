@@ -12,8 +12,9 @@ DOTFILES=$(pwd -P)
 brew tap homebrew/cask-fonts
 
 # Brew formulae
-brew install starship
 brew install exa
+brew install starship
+brew install sketchybar
 brew install lazygit
 brew install zsh-autosuggestions
 brew install zsh-syntax-highlighting
