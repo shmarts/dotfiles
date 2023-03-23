@@ -14,6 +14,7 @@ brew tap homebrew/cask-fonts
 # Brew formulae
 brew install exa
 brew install jq
+brew install ripgrep
 brew install starship
 brew install sketchybar
 brew install lazygit
