@@ -11,5 +11,9 @@ alias crucible='cd ~/code/frvr/frvr-crucible'
 
 # FUNCTIONS
 function mkcd() {
-    mkdir -p "$1" && cd "$1"
+  mkdir -p "$1" && cd "$1"
 }
+function kports() {
+  lsof -nti:$1 | xargs kill -9
+}
+
