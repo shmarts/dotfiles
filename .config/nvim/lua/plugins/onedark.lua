@@ -24,9 +24,9 @@ local options = {
     dark_red = "#a13131",
     dark_yellow = "#9a6b16",
     dark_purple = "#8f36a9",
-    diff_add = "#303d27",
-    diff_delete = "#3c2729",
-    diff_change = "#18344c",
+    diff_add = "#0ED090",
+    diff_delete = "#F24C4F",
+    diff_change = "#E9D165",
     diff_text = "#265478",
   },
   highlights = {
