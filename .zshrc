@@ -19,6 +19,7 @@ if [ -f '/Users/martin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/martin/g
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/martin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/martin/google-cloud-sdk/completion.zsh.inc'; fi
 
-eval "$(fnm env --use-on-cd)"
+export PATH="$HOME/.cargo/bin:$PATH"
 
+eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
