@@ -18,9 +18,9 @@ return require("lazy").setup({
     lazy = true,
     config = function() require("telescope").setup{
       pickers = {
-				find_files = {
-					find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
-				},
+        find_files = {
+          find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
+        },
       },
     } end,
   },
@@ -34,8 +34,8 @@ return require("lazy").setup({
   {
     'navarasu/onedark.nvim',
     config = function()
-			require "plugins.onedark"
-		end,
-	}
+      require "plugins.onedark"
+    end,
+  }
 })
 
