@@ -23,3 +23,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"
+precmd() { precmd() { echo "" } }
