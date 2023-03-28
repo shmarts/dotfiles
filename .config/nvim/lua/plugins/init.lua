@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 return require("lazy").setup({
+  'tpope/vim-fugitive',
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' },
