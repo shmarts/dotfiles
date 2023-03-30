@@ -3,6 +3,7 @@ alias l='exa -lah'
 alias ls='exa'
 alias sl='exa'
 alias lg='lazygit'
+alias v='nvim'
 
 # PROJECTS
 alias dotfiles='cd ~/dotfiles'
