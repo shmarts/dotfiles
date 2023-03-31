@@ -15,5 +15,5 @@ vim.keymap.set("v", "<C-S>", "<C-C>:update<CR>", { noremap = true, silent = true
 vim.keymap.set("i", "<C-S>", "<C-O>:update<CR>", { noremap = true, silent = true })
 
 -- telescope
-vim.keymap.set("n", "<leader>ff", ':lua require("telescope")<CR> <cmd>Telescope find_files hidden=true<cr>', opts)
-vim.keymap.set("n", "<leader>fg", ':lua require("telescope")<CR> <cmd>Telescope live_grep<cr>', opts)
+vim.keymap.set("n", "<C-p>", ':lua require("telescope")<CR> <cmd>Telescope find_files hidden=true<cr>')
+vim.keymap.set("n", "<C-S-f>", ':lua require("telescope")<CR> <cmd>Telescope live_grep<cr>')
