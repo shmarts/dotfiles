@@ -67,5 +67,6 @@ return require("lazy").setup({
       require('gitsigns').setup()
     end
   },
+  'folke/which-key.nvim',
 })
 
