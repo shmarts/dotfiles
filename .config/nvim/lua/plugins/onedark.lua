@@ -98,3 +98,9 @@ local options = {
 
 require("onedark").setup(options)
 require("onedark").load()
+
+-- gitsigns
+vim.cmd('highlight GitSignsAdd guifg=#0ED090')
+vim.cmd('highlight GitSignsChange guifg=#E9D165')
+vim.cmd('highlight GitSignsDelete guifg=#F24C4F')
+

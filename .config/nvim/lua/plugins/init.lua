@@ -37,6 +37,12 @@ return require("lazy").setup({
     end,
   },
   {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  },
+  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v1.x',
     dependencies = {
