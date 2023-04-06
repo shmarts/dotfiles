@@ -11,7 +11,7 @@ lsp.ensure_installed({
   'lua_ls',
   'rust_analyzer',
   'gopls',
-  'golangci-lint-langserver',
+  'golangci_lint_ls',
 })
 
 local cmp = require('cmp')
