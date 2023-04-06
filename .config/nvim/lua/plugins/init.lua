@@ -18,13 +18,9 @@ return require("lazy").setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' },
     lazy = true,
-    config = function() require("telescope").setup{
-      pickers = {
-        find_files = {
-          find_command = {'rg', '--files', '--hidden', '-g', '!.git'},
-        },
-      },
-    } end,
+    config = function()
+      require "plugins.telescope"
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter',
