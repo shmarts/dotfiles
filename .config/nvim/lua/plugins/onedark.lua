@@ -104,3 +104,6 @@ vim.cmd('highlight GitSignsAdd guifg=#0ED090')
 vim.cmd('highlight GitSignsChange guifg=#E9D165')
 vim.cmd('highlight GitSignsDelete guifg=#F24C4F')
 
+-- indent lines
+vim.cmd [[highlight IndentBlanklineChar guifg=#434C5E]]
+
