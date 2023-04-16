@@ -86,5 +86,6 @@ return require("lazy").setup({
       show_trailing_blankline_indent = false,
     },
   },
+  { 'numToStr/Comment.nvim', opts = {} },
 })
 
