@@ -42,6 +42,7 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install fnm
   brew install mprocs
   brew install golangci-lint
+  brew install tmux
   # Brew casks
   brew install --cask font-fira-code-nerd-font
   brew install --cask alacritty
