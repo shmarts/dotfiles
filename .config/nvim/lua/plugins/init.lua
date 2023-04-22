@@ -71,14 +71,9 @@ return require("lazy").setup({
   'folke/which-key.nvim',
   {
     'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
+    config = function()
+      require 'plugins.lualine'
+    end
   },
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -94,8 +89,23 @@ return require("lazy").setup({
       'nvim-tree/nvim-web-devicons'
     },
     config = function()
-      require('nvim-tree').setup()
+      require 'plugins.nvim-tree'
     end
+  },
+  'MunifTanjim/nui.nvim',
+  {
+    "folke/noice.nvim",
+    config = function()
+      require 'plugins.noice'
+    end,
+    requires = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    }
   }
 })
 

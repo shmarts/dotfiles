@@ -1,3 +1,5 @@
+
+
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -17,5 +19,5 @@ vim.keymap.set("v", "<C-S>", "<C-C>:update<CR>", { noremap = true, silent = true
 vim.keymap.set("i", "<C-S>", "<C-O>:update<CR>", { noremap = true, silent = true })
 
 -- telescope
-vim.keymap.set("n", "<C-p>", ':lua require("telescope")<CR> <cmd>Telescope find_files hidden=true<cr>')
-vim.keymap.set("n", "<C-S-f>", ':lua require("telescope")<CR> <cmd>Telescope live_grep<cr>')
+vim.keymap.set("n", "<C-p>", function () require('telescope.builtin').find_files({ hidden = true }) end)
+vim.keymap.set("n", "<C-f>", function () require('telescope.builtin').live_grep() end)

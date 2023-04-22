@@ -6,7 +6,7 @@ local options = {
     bg1 = "#2E3440",
     bg2 = "#3B4252",
     bg3 = "#434C5E",
-    bg_d = "#1e242e",
+    bg_d = "#242831",
     bg_blue = "#6db9f7",
     bg_yellow = "#f0d197",
     fg = "#c0c5ce",
@@ -99,11 +99,19 @@ local options = {
 require("onedark").setup(options)
 require("onedark").load()
 
+-- TODO: improve the below with a function
 -- gitsigns
 vim.cmd('highlight GitSignsAdd guifg=#0ED090')
 vim.cmd('highlight GitSignsChange guifg=#E9D165')
 vim.cmd('highlight GitSignsDelete guifg=#F24C4F')
 
--- indent lines
-vim.cmd [[highlight IndentBlanklineChar guifg=#434C5E]]
+-- nvim-tree
+vim.cmd('highlight NvimTreeRootFolder guifg=#81A2BE')
+
+-- common
+vim.cmd('highlight IndentBlanklineChar guifg=#434C5E')
+vim.cmd('highlight MsgArea guibg=#242831')
+vim.cmd('highlight WinSeparator guibg=#242831 guifg=#242831')
+vim.cmd('highlight StatusLine guibg=#242831')
+vim.cmd('highlight StatusLineNC guibg=#242831')
 

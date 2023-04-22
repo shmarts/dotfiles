@@ -38,7 +38,7 @@ window:
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  #position:
+  # position:
   #  x: 0
   #  y: 0
 
@@ -48,7 +48,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 4
-    y: 0
+    y: 4
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -200,7 +200,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#2B303A'
+    background: '#242831'
     foreground: '#E5E5E5'
 
     # Bright and dim foreground colors
