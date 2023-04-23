@@ -23,6 +23,18 @@ while [[ "$#" -gt 0 ]]; do
   shift
 done
 
+# Make symlinks in homedir
+files=($(git ls-tree --name-only main))
+echo "...done"
+echo "Changing to the $DOTFILES directory"
+cd $DOTFILES
+echo "...done"
+for file in ${files[@]}; do
+  if [[ "$file" =~ ^(.gitignore|install.sh|macosdefaults.sh|wallpapers)$ ]]; then continue ; fi
+  echo "Creating symlink to $file in home directory."
+  ln -sfn $DOTFILES/$file ~/$file
+done
+
 # Dependency installs
 if [[ "$install_dependencies" -eq 1 ]]; then
   # Brew taps
@@ -45,23 +57,10 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install tmux
   # Brew casks
   brew install --cask font-fira-code-nerd-font
-
+  brew install --cask kitty
   # Other
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  brew install --cask kitty
 fi
-
-# Make symlinks in homedir
-files=($(git ls-tree --name-only main))
-echo "...done"
-echo "Changing to the $DOTFILES directory"
-cd $DOTFILES
-echo "...done"
-for file in ${files[@]}; do
-  if [[ "$file" =~ ^(.gitignore|install.sh|macosdefaults.sh|wallpapers)$ ]]; then continue ; fi
-  echo "Creating symlink to $file in home directory."
-  ln -sfn $DOTFILES/$file ~/$file
-done
 
 # .env.sh file
 create_env_file () {
