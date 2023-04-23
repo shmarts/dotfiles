@@ -45,10 +45,10 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install tmux
   # Brew casks
   brew install --cask font-fira-code-nerd-font
-  brew install --cask alacritty
 
   # Other
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  brew install --cask kitty
 fi
 
 # Make symlinks in homedir
