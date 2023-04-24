@@ -28,12 +28,6 @@ main() {
     tmux set-window-option -gq "$option" "$value"
   }
 
-  # status
-  set status "on"
-  set status-interval 5
-  set status-bg "${thm_bg0}"
-  set status-justify "centre"
-
   # panes
   set pane-border-style "fg=${thm_gray}"
   set pane-active-border-style "fg=${thm_blue}"
@@ -43,17 +37,22 @@ main() {
   setw window-status-separator ""
   setw window-status-style "fg=${thm_fg},bg=${thm_bg0},none"
 
-  # --------=== Statusline
+  # status
+  set status "on"
+  set status-interval 5
+  set status-bg "${thm_bg0}"
+  set status-justify "centre"
+
+  # statusline
   readonly show_tmux_name="#[fg=$thm_blue,bg=$thm_bg0]  tmux"
 
   readonly window_status=" #[fg=$thm_blue,bg=$thm_bg0]#I:#W "
   readonly window_status_current=" #[fg=$thm_blue,bg=$thm_bg0]#[fg=$thm_bg0,bg=$thm_blue] #I:#W #[fg=$thm_blue,bg=$thm_bg0]#[fg=$thm_blue,bg=$thm_bg0] "
 
   set status-left "${show_tmux_name}"
-  set status-right "       " # equal to status-left length to center stuff
-  
   setw window-status-format "${window_status}"
   setw window-status-current-format "${window_status_current}"
+  set status-right "       " # equal to status-left length to center stuff
 }
 
 main "$@"
