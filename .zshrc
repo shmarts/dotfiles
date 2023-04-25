@@ -13,6 +13,11 @@ setopt autocd
 source $HOME/.env.sh
 source $DOTFILES/aliases.zsh
 
+export FZF_DEFAULT_OPTS='--color=fg:#546178,bg:-1,hl:#4491E6
+--color=fg+:#e5e5e5,bg+:-1,hl+:#4491E6
+--color=info:#e5e5e5,prompt:#0ED090,pointer:#e5e5e5
+--color=marker:#0ED090,spinner:#af5fff,header:#af5fff'
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/martin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/martin/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -20,6 +25,7 @@ if [ -f '/Users/martin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/martin/g
 if [ -f '/Users/martin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/martin/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$DOTFILES/bin:$PATH"
 
 eval "$(fnm env --use-on-cd)"
 eval "$(starship init zsh)"

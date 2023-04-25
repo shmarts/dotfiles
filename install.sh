@@ -43,6 +43,7 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install exa
   brew install jq
   brew install ripgrep
+  brew install fzf
   brew install starship
   brew install sketchybar
   brew install lazygit
@@ -72,6 +73,17 @@ create_env_file () {
   fi
 }
 create_env_file
+
+# scripts
+setup_scripts () {
+  echo 'Setting up scripts...'
+  scripts_dir=$DOTFILES/bin
+  for file in $scripts_dir/*; do
+    chmod u+r+x $file
+  done
+  echo 'Scripts set up'
+}
+setup_scripts
 
 echo ''
 echo 'Done!'

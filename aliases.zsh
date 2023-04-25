@@ -10,6 +10,9 @@ alias dotfiles='cd ~/dotfiles'
 alias krunker='cd ~/code/frvr/game-krunker-frvr'
 alias crucible='cd ~/code/frvr/frvr-crucible'
 
+# SCRIPTS
+alias tm='tmux-sessionizer'
+
 # FUNCTIONS
 function mkcd() {
   mkdir -p "$1" && cd "$1"
