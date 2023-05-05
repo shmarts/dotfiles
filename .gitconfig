@@ -10,3 +10,6 @@
 	email = wat.martinrojo@gmail.com
 [init]
 	defaultBranch = main
+[rebase]
+	autoStash = true
+
