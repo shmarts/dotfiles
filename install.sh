@@ -59,9 +59,12 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   # Brew casks
   brew install --cask font-fira-code-nerd-font
   brew install --cask kitty
+  brew install --cask raycast
   # Other
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
+
+curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.6/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
 
 # .env.sh file
 create_env_file () {
