@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Parse args
+force_small=0
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    -fs|--force-small)
+      force_small=1
+      ;;
+  esac
+  shift
+done
+
 display="$(yabai -m query --displays --window | jq '.frame')"
 display_width="$(jq --argjson display "${display}" -nr '$display.w')"
 display_height="$(jq --argjson display "${display}" -nr '$display.h')"
@@ -10,7 +21,7 @@ window_width="$(jq --argjson window "${window}" -nr '$window.w')"
 window_gap=6
 max_window_width=$((display_width - window_gap * 2))
 
-if [[ $window_width -eq $max_window_width ]]; then
+if [[ $window_width -eq $max_window_width ]] || [[ $force_small -eq 1 ]]; then
   new_width="$(jq --argjson display "${display}" -nr '$display.w / 1.3')"
   new_height="$(jq --argjson display "${display}" -nr '$display.h / 1.2')"
   yabai -m window --resize "abs:${new_width}:${new_height}"
