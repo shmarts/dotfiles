@@ -1,6 +1,6 @@
 #!/bin/sh
 
-desired_spaces=8
+desired_spaces=10
 current_spaces="$(yabai -m query --displays | jq -r '.[].spaces | @sh')"
 
 delta=0
@@ -52,7 +52,11 @@ move_app_to_space() {
 move_app_to_space "Arc" 1
 move_app_to_space "Code" 2 0
 move_app_to_space "Code" 3 1
-move_app_to_space "Slack" 4
-move_app_to_space "Discord" 5
-move_app_to_space "Spotify" 6
-move_app_to_space "Messages" 7
+move_app_to_space "Obsidian" 4
+move_app_to_space "Notes" 4
+move_app_to_space "Slack" 5
+move_app_to_space "Discord" 6
+move_app_to_space "Spotify" 7
+move_app_to_space "Messages" 8
+move_app_to_space "Figma" 9
+move_app_to_space "Notion" 10
