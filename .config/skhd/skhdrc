@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Space Navigation (8 spaces per display): lalt - {1, 2, 3, 4, 5, 6, 7, 8}
 shift + cmd - 1 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((1+8*($DISPLAY - 1)))
 shift + cmd - 2 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((2+8*($DISPLAY - 1)))
@@ -13,9 +15,9 @@ lalt - h : sh ${HOME}/dotfiles/.config/skhd/focus_window.sh --focus prev
 lalt - l : sh ${HOME}/dotfiles/.config/skhd/focus_window.sh --focus next
 
 # Window positioning
-shift + lalt - f : sh ${HOME}/dotfiles/.config/skhd/center_window.sh
 shift + lalt - h : sh ${HOME}/dotfiles/.config/skhd/split_windows.sh left
 shift + lalt - l : sh ${HOME}/dotfiles/.config/skhd/split_windows.sh right
+shift + lalt - f : sh "${HOME}"/dotfiles/.config/skhd/maximise_or_center_window.sh
 
 shift + lalt - o : sh ${HOME}/dotfiles/.config/skhd/organise_spaces.sh
 
