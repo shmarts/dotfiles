@@ -1,10 +1,9 @@
 # ALIASES
-alias l='exa -lah'
-alias ls='exa'
-alias sl='exa'
+alias l='eza -lah'
+alias ls='eza'
+alias sl='eza'
 alias lg='lazygit'
 alias v='nvim'
-
 # PROJECTS
 alias dotfiles='cd ~/dotfiles'
 alias krunker='cd ~/code/frvr/game-krunker-frvr'
