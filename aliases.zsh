@@ -4,10 +4,8 @@ alias ls='eza'
 alias sl='eza'
 alias lg='lazygit'
 alias v='nvim'
-# PROJECTS
-alias dotfiles='cd ~/dotfiles'
-alias krunker='cd ~/code/frvr/game-krunker-frvr'
-alias crucible='cd ~/code/frvr/frvr-crucible'
+alias rmnpm="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+alias fman="compgen -c | fzf | xargs man"
 
 # SCRIPTS
 alias tm='tmux-sessionizer'
