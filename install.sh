@@ -40,7 +40,7 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   # Brew taps
   brew tap homebrew/cask-fonts
   # Brew formulae
-  brew install exa
+  brew install eza
   brew install jq
   brew install ripgrep
   brew install fzf
@@ -57,11 +57,14 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install golangci-lint
   brew install tmux
   # Brew casks
+  brew install MonitorControl
   brew install --cask font-fira-code-nerd-font
   brew install --cask kitty
   brew install --cask raycast
+  brew install --cask alt-tab
   # Other
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  curl -fsSL https://bun.sh/install | bash
 fi
 
 curl -L https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v1.0.6/sketchybar-app-font.ttf -o $HOME/Library/Fonts/sketchybar-app-font.ttf
