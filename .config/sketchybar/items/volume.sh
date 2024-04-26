@@ -16,7 +16,6 @@ volume_slider=(
 volume_icon=(
   click_script="$PLUGIN_DIR/volume_click.sh"
   padding_left=10
-  padding_right=0
   icon=$VOLUME_100
   icon.width=0
   icon.align=left
@@ -30,7 +29,6 @@ volume_icon=(
 status_bracket=(
   background.color=$BACKGROUND_1
   background.border_color=$BACKGROUND_2
-  background.border_width=2
 )
 
 sketchybar --add slider volume right            \
