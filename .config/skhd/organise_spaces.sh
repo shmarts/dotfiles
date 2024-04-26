@@ -40,11 +40,11 @@ maximise_window() {
 center_window() {
   window_id="$1"
   display="$(yabai -m query --displays --window "$window_id" | jq '.frame')"
-  display_width="$(jq --argjson display "${display}" -nr '$display.w')"
-  display_height="$(jq --argjson display "${display}" -nr '$display.h')"
+  display_width="$(jq --argjson display "${display}" -nr '$display.w | tonumber | floor')"
+  display_height="$(jq --argjson display "${display}" -nr '$display.h | tonumber | floor')"
 
-  new_width="$(jq --argjson display "${display}" -nr '$display.w / 1.3')"
-  new_height="$(jq --argjson display "${display}" -nr '$display.h / 1.2')"
+  new_width="$(jq --argjson display "${display}" -nr '$display.w | tonumber | floor / 1.3')"
+  new_height="$(jq --argjson display "${display}" -nr '$display.h | tonumber | floor / 1.2')"
   yabai -m window "$window_id" --resize "abs:${new_width}:${new_height}"
 
   new_x=$(echo "$display_width $new_width" | awk '{print ($1 - $2) / 2}')
@@ -75,7 +75,7 @@ move_app_to_space() {
     echo "maximising $app_name"
     maximise_window "$window_id"
   fi
-
+  echo "Moving $app_name to space $space"
   yabai -m window "$window_id" --space "$space"
 }
 

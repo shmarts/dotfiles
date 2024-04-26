@@ -8,7 +8,7 @@ fi
 
 # TODO https://github.com/koekeishiya/yabai/wiki/Commands#modify-padding-and-gaps instead of gap management?
 
-display_width="$(yabai -m query --displays --window | jq '.frame.w')"
+display_width=$(yabai -m query --displays --window | jq -r '.frame.w | tonumber | floor')
 window_gap=6
 half_window_gap=$((window_gap / 2))
 available_space=$((display_width - window_gap * 2))
@@ -18,8 +18,11 @@ one_third_window_width=$((available_space / 3 - half_window_gap))
 
 focused=$(yabai -m query --windows --window)
 focused_id=$(echo "$focused" | jq '.id')
-focused_width=$(echo "$focused" | jq '.frame.w')
-is_not_half=$((focused_width != half_window_width))
+focused_width=$(echo "$focused" | jq '.frame.w | tonumber | floor')
+echo ""
+echo "$focused_width"
+echo "$half_window_width"
+is_not_half=$((focused_width < half_window_width - 5 || focused_width > half_window_width + 5))
 
 # <rows>:<cols>:<start-x>:<start-y>:<width>:<height>
 
