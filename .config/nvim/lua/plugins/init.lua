@@ -14,7 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 return require("lazy").setup({
   'tpope/vim-fugitive',
   'tpope/vim-sleuth',
+  'tpope/vim-surround',
   'christoomey/vim-tmux-navigator',
+  'szw/vim-maximizer',
+  'vim-scripts/ReplaceWithRegister',
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -85,13 +88,11 @@ return require("lazy").setup({
   { 'numToStr/Comment.nvim', opts = {} },
   {
     'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons'
-    },
     config = function()
       require 'plugins.nvim-tree'
     end
   },
+  'nvim-tree/nvim-web-devicons',
   'MunifTanjim/nui.nvim',
   {
     "folke/noice.nvim",
