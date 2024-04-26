@@ -4,7 +4,7 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
     hardcoded_dirs="~/dotfiles"
-    search_dirs="$(find ~/code ~/code/frvr -mindepth 1 -maxdepth 1 -type d | sed "s|${HOME}|~|")"
+    search_dirs="$(find ~/code ~/frvr -mindepth 1 -maxdepth 1 -type d | sed "s|${HOME}|~|")"
     selected=$(echo -e "$hardcoded_dirs\n$search_dirs" | fzf)
 fi
 
