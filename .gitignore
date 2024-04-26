@@ -1,6 +1,7 @@
 **.DS_Store
 gcloud
 .config/lazygit/state.yml
+.config/github-copilot
 simple-update-notifier
 raycast
 .config/zed/.tmp*
