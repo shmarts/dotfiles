@@ -1,0 +1,21 @@
+background = #242831
+foreground = #E5E5E5
+palette = 0=#000000
+palette = 1=#F24C4F
+palette = 2=#0ED090
+palette = 3=#E9D165
+palette = 4=#4491E6
+palette = 5=#D873D3
+palette = 6=#2EB9D9
+palette = 7=#E5E5E5
+
+window-padding-x = 6
+window-padding-y = 2
+window-decoration = false
+
+adjust-cell-width=-10%
+adjust-cell-height=-5%
+
+font-family=FiraCode Nerd Font
+font-size=14
+font-thicken=true

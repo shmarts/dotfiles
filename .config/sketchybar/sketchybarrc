@@ -1,86 +1,211 @@
 #!/bin/bash
 
-CONFIG_DIR="$HOME/.config/sketchybar"
+# CONFIG_DIR="$HOME/.config/sketchybar"
 
-source "$CONFIG_DIR/colors.sh" # Loads all defined colors
-source "$CONFIG_DIR/icons.sh" # Loads all defined icons
+# source "$CONFIG_DIR/colors.sh" # Loads all defined colors
+# source "$CONFIG_DIR/icons.sh" # Loads all defined icons
 
-ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
-PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
+# ITEM_DIR="$CONFIG_DIR/items" # Directory where the items are configured
+# PLUGIN_DIR="$CONFIG_DIR/plugins" # Directory where all the plugin scripts are stored
 
-FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
-PADDINGS=3 # All paddings use this value (icon, label, background)
+# FONT="SF Pro" # Needs to have Regular, Bold, Semibold, Heavy and Black variants
+# PADDINGS=3 # All paddings use this value (icon, label, background)
 
-# Setting up and starting the helper process
-HELPER=git.felix.helper
-killall helper
-(cd $CONFIG_DIR/helper && make)
-$CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
+# # Setting up and starting the helper process
+# HELPER=git.felix.helper
+# killall helper
+# (cd $CONFIG_DIR/helper && make)
+# $CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
 
-# Unload the macOS on screen indicator overlay for volume change
-# launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+# # Unload the macOS on screen indicator overlay for volume change
+# # launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
-# Setting up the general bar appearance of the bar
-bar=(
-  height=24
-  color=$BG_D
-  border_width=0
-  # border_color=$BAR_BORDER_COLOR
-  shadow=off
-  position=top
-  sticky=on
-  padding_right=6
-  padding_left=6
-  # y_offset=-5
-  # margin=-2
-)
+# # Setting up the general bar appearance of the bar
+# bar=(
+#   height=42
+#   color=$BG_D
+#   border_width=1
+#   # border_color=$BAR_BORDER_COLOR
+#   shadow=off
+#   position=left
+#   sticky=on
+#   padding_right=6
+#   padding_left=6
+#   y_offset=0
+#   x_offset=0
+#   margin=0
+#   border_color=0xffff0000
+# )
 
-sketchybar --bar "${bar[@]}"
+# sketchybar --bar "${bar[@]}"
 
-# Setting up default values
-defaults=(
-  updates=when_shown
-  icon.font="$FONT:Bold:14.0"
-  icon.color=$GREY
-  icon.padding_left=2
-  icon.padding_right=2
-  label.font="$FONT:Semibold:13.0"
-  label.color=$GREY
-  label.padding_left=2
-  label.padding_right=2
-  padding_right=2
-  padding_left=2
-  background.height=26
-  background.corner_radius=0
-  background.border_width=0
-  # popup.background.border_width=0
-  # popup.background.corner_radius=0
-  # popup.background.border_color=$POPUP_BORDER_COLOR
-  # popup.background.color=$POPUP_BACKGROUND_COLOR
-  # popup.blur_radius=20
-  # popup.background.shadow.drawing=on
-)
+# # Setting up default values
+# defaults=(
+#   updates=when_shown
+#   icon.font="$FONT:Bold:14.0"
+#   icon.color=$GREY
+#   icon.padding_left=2
+#   icon.padding_right=2
+#   label.font="$FONT:Semibold:13.0"
+#   label.color=$GREY
+#   label.padding_left=2
+#   label.padding_right=2
+#   padding_right=2
+#   padding_left=2
+#   background.height=26
+#   background.width=48
+#   background.corner_radius=0
+#   background.border_width=0
+#   # popup.background.border_width=0
+#   # popup.background.corner_radius=0
+#   # popup.background.border_color=$POPUP_BORDER_COLOR
+#   # popup.background.color=$POPUP_BACKGROUND_COLOR
+#   # popup.blur_radius=20
+#   # popup.background.shadow.drawing=on
+# )
 
-sketchybar --default "${defaults[@]}"
+# sketchybar --default "${defaults[@]}"
 
-# Left
-# source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
-# source "$ITEM_DIR/front_app.sh"
+# # Top
+# # source "$ITEM_DIR/apple.sh"
+# source "$ITEM_DIR/spaces.sh"
+# source "$ITEM_DIR/yabai.sh"
+# # source "$ITEM_DIR/front_app.sh"
 
-# Center
-# source "$ITEM_DIR/spotify.sh"
+# # Center
+# # source "$ITEM_DIR/spotify.sh"
 
-# Right
-source "$ITEM_DIR/calendar.sh"
-# source "$ITEM_DIR/brew.sh"
-# source "$ITEM_DIR/github.sh"
-# source "$ITEM_DIR/battery.sh"
-# source "$ITEM_DIR/volume.sh"
-# source "$ITEM_DIR/cpu.sh"
+# # Bottom
+# source "$ITEM_DIR/date.sh"
+# source "$ITEM_DIR/time.sh"
+# # source "$ITEM_DIR/github.sh"
+# # source "$ITEM_DIR/battery.sh"
+# # source "$ITEM_DIR/volume.sh"
+# # source "$ITEM_DIR/cpu.sh"
 
-# Forcing all item scripts to run (never do this outside of sketchybarrc)
+# # Forcing all item scripts to run (never do this outside of sketchybarrc)
+# sketchybar --update
+
+# echo "sketchybar configuation loaded.."
+
+
+
+# #!/usr/bin/env zsh
+
+# FONT_FACE="JetBrainsMono Nerd Font"
+# PLUGIN_DIR="$HOME/.config/sketchybar/plugins-desktop"
+# PLUGIN_SHARED_DIR="$HOME/.config/sketchybar/plugins"
+
+# SPOTIFY_EVENT="com.spotify.client.PlaybackStateChanged"
+
+# sketchybar --bar \
+#     height=32 \
+#     color=0x66494d64 \
+#     margin=0 \
+#     sticky=on \
+#     padding_left=0 \
+#     padding_right=0 \
+#     notch_width=188 \
+#     display=main
+
+# sketchybar --default \
+#     background.height=32 \
+#     icon.color=0xff24273a \
+#     icon.font="$FONT_FACE:Medium:20.0" \
+#     icon.padding_left=5 \
+#     icon.padding_right=5 \
+#     label.color=0xff24273a \
+#     label.font="$FONT_FACE:Bold:14.0" \
+#     label.y_offset=1 \
+#     label.padding_left=0 \
+#     label.padding_right=5
+
+# sketchybar --add item current_space left \
+#     --set current_space \
+#     background.color=0xfff5a97f \
+#     label.drawing=off \
+#     script="$PLUGIN_SHARED_DIR/current_space.sh" \
+#     --subscribe current_space space_change mouse.clicked
+
+# sketchybar --add item front_app left \
+#     --set front_app \
+#     background.color=0xffa6da95 \
+#     background.padding_left=0 \
+#     background.padding_right=0 \
+#     icon.y_offset=1 \
+#     label.drawing=no \
+#     script="$PLUGIN_SHARED_DIR/front_app.sh" \
+#     --add item front_app.separator left \
+#     --set front_app.separator \
+#     background.color=0x00000000 \
+#     icon= \
+#     icon.color=0xffa6da95 \
+#     icon.font="$FONT_FACE:Bold:23.0" \
+#     icon.padding_left=0 \
+#     icon.padding_right=0 \
+#     icon.y_offset=1 \
+#     label.drawing=no \
+#     --add item front_app.name left \
+#     --set front_app.name \
+#     background.color=0x00000000 \
+#     icon.drawing=off \
+#     label.font="$FONT_FACE:Bold:16.0" \
+#     label.color=0xffcad3f5 \
+#     label.padding_left=5
+
+# sketchybar --add bracket front_app_bracket \
+#     front_app \
+#     front_app.separator \
+#     front_app.name \
+#     --subscribe front_app front_app_switched
+
+# sketchybar --add item clock right \
+#     --set clock \
+#     icon=󰃰 \
+#     background.color=0xffed8796 \
+#     update_freq=10 \
+#     script="$PLUGIN_SHARED_DIR/clock.sh"
+
+# sketchybar --add event spotify_change $SPOTIFY_EVENT \
+#     --add item spotify right \
+#     --set spotify \
+#     icon= \
+#     icon.y_offset=1 \
+#     label.drawing=off \
+#     label.padding_left=3 \
+#     script="$PLUGIN_DIR/spotify.sh" \
+#     --subscribe spotify spotify_change mouse.clicked
+
+# ##### Finalizing Setup #####
+# sketchybar --update
+# sketchybar --trigger space_change
+
+source "./globals.sh"
+source "./items.sh"
+
+sketchybar --bar "${SB_BAR[@]}" --default "${SB_DEFAULT[@]}"
+sketchybar --add event aerospace_workspace_change
+
+###### Top ######
+
+# sb_hours left
+# sb_minutes left
+# sb_pomodoro left
+# sb_separator left 14 14
+# sb_date left
+# sb_separator left 20 16
+sb_spaces left
+
+###### Btm ######
+
+# sb_month right
+sb_date right
+sb_clock right
+# sb_wifi right
+# sb_battery right
+# sb_volume right
+# sb_separator right 12 12
+
+##################
+
 sketchybar --update
-
-echo "sketchybar configuation loaded.."

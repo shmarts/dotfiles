@@ -62,6 +62,7 @@ if [[ "$install_dependencies" -eq 1 ]]; then
   brew install --cask kitty
   brew install --cask raycast
   brew install --cask alt-tab
+  brew install --cask hammerspoon
   # Other
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   curl -fsSL https://bun.sh/install | bash
@@ -90,6 +91,9 @@ setup_scripts () {
   echo 'Scripts set up'
 }
 setup_scripts
+
+# symlinks
+ln -sfn $DOTFILES/.tmux/tmux-sessionizer ~/bin/tmux-sessionizer
 
 echo ''
 echo 'Done!'

@@ -62,7 +62,7 @@ move_app_to_space() {
   fi
 
   window_id="$(echo "$windows" |
-    jq --arg app_name "$app_name" --argjson app_index "$app_index" 'nth($app_index; .[] | select(.app == $app_name)) | .id'
+    jq --arg app_name "$app_name" --argjson app_index "$app_index" 'nth($app_index; .[] | select((.app + .title) | contains($app_name))) | .id'
   )"
   if [ "$window_id" = "null" ]; then
     return
@@ -80,13 +80,15 @@ move_app_to_space() {
 }
 
 move_app_to_space "Arc" 1 0
-move_app_to_space "Code" 2 0 0
-move_app_to_space "Code" 3 0 1
-move_app_to_space "Obsidian" 4 1
-move_app_to_space "Notes" 4 1
-move_app_to_space "Slack" 5 1
-move_app_to_space "Discord" 6 1
-move_app_to_space "Spotify" 7 1
-move_app_to_space "Messages" 8 1
-move_app_to_space "Figma" 9 0
-move_app_to_space "Notion" 10 1
+move_app_to_space "frvr-playerfacing" 2 0 0
+move_app_to_space "Safari" 2 0 0
+move_app_to_space "Chromium" 2 0 0
+move_app_to_space "frvr-crucible" 3 0 0
+move_app_to_space "Slack" 4 1
+move_app_to_space "WORK TODO" 4 1
+move_app_to_space "Discord" 5 1
+move_app_to_space "Spotify" 5 1
+move_app_to_space "Figma" 6 0 0
+move_app_to_space "Messages" 7 1
+move_app_to_space "Photos" 7 1 0
+move_app_to_space "SketchUp" 7 1 0

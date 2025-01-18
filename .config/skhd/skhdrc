@@ -1,25 +1,27 @@
 #!/bin/bash
 
 # Space Navigation (8 spaces per display): lalt - {1, 2, 3, 4, 5, 6, 7, 8}
-shift + cmd - 1 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((1+8*($DISPLAY - 1)))
-shift + cmd - 2 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((2+8*($DISPLAY - 1)))
-shift + cmd - 3 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((3+8*($DISPLAY - 1)))
-shift + cmd - 4 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((4+8*($DISPLAY - 1)))
-shift + cmd - 5 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((5+8*($DISPLAY - 1)))
-shift + cmd - 6 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((6+8*($DISPLAY - 1)))
-shift + cmd - 7 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((7+8*($DISPLAY - 1)))
-shift + cmd - 8 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((8+8*($DISPLAY - 1)))
+# shift + cmd - 1 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((1+8*($DISPLAY - 1)))
+# shift + cmd - 2 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((2+8*($DISPLAY - 1)))
+# shift + cmd - 3 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((3+8*($DISPLAY - 1)))
+# shift + cmd - 4 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((4+8*($DISPLAY - 1)))
+# shift + cmd - 5 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((5+8*($DISPLAY - 1)))
+# shift + cmd - 6 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((6+8*($DISPLAY - 1)))
+# shift + cmd - 7 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((7+8*($DISPLAY - 1)))
+# shift + cmd - 8 : DISPLAY="$(yabai -m query --displays --display | jq '.index')"; yabai -m space --focus $((8+8*($DISPLAY - 1)))
 
 # Window Navigation (lalt - {h, l})
-lalt - h : sh "${HOME}"/dotfiles/.config/skhd/focus_window.sh --focus prev
-lalt - l : sh "${HOME}"/dotfiles/.config/skhd/focus_window.sh --focus next
+# lalt - h : sh "${HOME}"/dotfiles/.config/skhd/focus_window.sh --focus prev
+# lalt - l : sh "${HOME}"/dotfiles/.config/skhd/focus_window.sh --focus next
 
 # Window positioning
-shift + lalt - f : sh "${HOME}"/dotfiles/.config/skhd/maximise_or_center_window.sh
-shift + lalt - h : sh "${HOME}"/dotfiles/.config/skhd/split_windows.sh left
-shift + lalt - l : sh "${HOME}"/dotfiles/.config/skhd/split_windows.sh right
+# shift + lalt - f : sh "${HOME}"/dotfiles/.config/skhd/maximise_or_center_window.sh
+# shift + lalt - h : sh "${HOME}"/dotfiles/.config/skhd/split_windows.sh left
+# shift + lalt - l : sh "${HOME}"/dotfiles/.config/skhd/split_windows.sh right
 
-shift + lalt - o : sh "${HOME}"/dotfiles/.config/skhd/organise_spaces.sh
+# shift + lalt - o : sh "${HOME}"/dotfiles/.config/skhd/organise_spaces.sh
+
+# shift + lalt - d : echo "6442" | sudo -S yabai --load-sa
 
 # WIP
 # Moving windows between spaces: shift + lalt - {1, 2, 3, 4, p, n } (Assumes 4 Spaces Max per Display)
