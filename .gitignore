@@ -5,3 +5,4 @@ gcloud
 simple-update-notifier
 raycast
 .config/zed/.tmp*
+.config/qBittorrent

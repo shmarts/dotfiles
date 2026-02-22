@@ -215,6 +215,15 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.gather.GatherV2'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.autodesk.fusion360'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.bambulab.bambu-studio'
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.sketchup.SketchUp.2023'
+run = 'layout floating'
 
 # Default layouts
 [[on-window-detected]]
@@ -226,9 +235,6 @@ if.app-id = 'com.microsoft.VSCode'
 run = ['move-node-to-workspace 2']
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-run = ['move-node-to-workspace 2']
-[[on-window-detected]]
-if.app-id = 'net.mitchellh.ghostty'
 run = ['move-node-to-workspace 2']
 
 [[on-window-detected]]
@@ -260,3 +266,11 @@ run = ['move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-id = 'com.sketchup.SketchUp.2023'
 run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
+if.app-id = 'com.autodesk.fusion360'
+run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Safari.WebApp.2A9C615F-1974-45F8-8642-135EC778183C' #librechat
+run = ['move-node-to-workspace 9']

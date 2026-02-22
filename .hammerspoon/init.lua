@@ -1,1 +1,4 @@
-hs.loadSpoon('EmmyLua')
+require("config")
+
+-- hotkeys
+require("keyboard.split")
