@@ -18,5 +18,22 @@
 [alias]
 	undo = reset --soft HEAD^
 
+[core]
+	pager = delta --navigate
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = spacegray-ocean-dark
+	dark = true
+	minus-style = syntax "#3d2024"
+	minus-emph-style = syntax "#5c2d33"
+	plus-style = syntax "#1e3a29"
+	plus-emph-style = syntax "#2e5a3d"
+
+[merge]
+    conflictStyle = zdiff3
+
 [http]
 	postBuffer = 157286400

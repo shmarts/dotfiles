@@ -1,3 +1,7 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/martin/completions:"* ]]; then export FPATH="/Users/martin/completions:$FPATH"; fi
 # Plugins
 [ -d "/opt/homebrew/share/zsh-autosuggestions/" ] && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh \
                                                   || source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -50,3 +54,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # zoxide
 eval "$(zoxide init zsh)"
 
+# Created by `pipx` on 2025-06-02 14:08:34
+export PATH="$PATH:/Users/martin/.local/bin"
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True

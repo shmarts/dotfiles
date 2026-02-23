@@ -1,6 +1,6 @@
 gui:
   # stuff relating to the UI
-  windowSize: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
+  screenMode: 'normal' # one of 'normal' | 'half' | 'full' default is 'normal'
   scrollHeight: 2 # how many lines you scroll by
   scrollPastBottom: true # enable scrolling past the bottom
   sidePanelWidth: 0.3333 # number from 0 to 1
@@ -33,9 +33,10 @@ gui:
   commitLength:
     show: true
   mouseEvents: true
-  skipUnstageLineWarning: false
+  skipDiscardChangeWarning: false
   skipStashWarning: false
   showFileTree: true # for rendering changes files in a tree format
+  showRootItemInFileTree: false
   showListFooter: true # for seeing the '5 of 20' message in list panels
   showRandomTip: true
   showBottomLine: false # for hiding the bottom information line (unless it has important information to tell you)
@@ -46,9 +47,9 @@ gui:
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
   border: 'single' # one of 'single' | 'double' | 'rounded' | 'hidden'
 git:
-  paging:
-    colorArg: always
-    useConfig: false
+  pagers:
+    - pager: delta --dark --paging=never --file-style=omit --hunk-header-line-number-style="bold cyan" --hunk-header-decoration-style="" --hunk-header-style="omit"
+      colorArg: always
   commit:
     signOff: false
     verbose: default # one of 'default' | 'always' | 'never'
@@ -71,11 +72,12 @@ git:
   autoFetch: true
   autoRefresh: true
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
-  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
   disableForcePushing: false
   parseEmoji: false
   diffContextSize: 3 # how many lines of context are shown around a change in diffs
+  allBranchesLogCmds:
+    - git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium
 os:
   editCommand: '' # see 'Configuring File Editing' section
   editCommandTemplate: ''
@@ -116,7 +118,7 @@ keybinding:
     jumpToBlock: ['1', '2', '3', '4', '5'] # goto the Nth block / panel
     nextMatch: 'n'
     prevMatch: 'N'
-    optionMenu: null # show help menu
+    optionMenu: <disabled> # show help menu
     optionMenu-alt1: '?' # show help menu
     select: '<space>'
     goInto: '<enter>'
@@ -132,7 +134,7 @@ keybinding:
     scrollDownMain-alt1: 'J' # main panel scroll down
     scrollUpMain-alt2: '<c-u>' # main panel scroll up
     scrollDownMain-alt2: '<c-d>' # main panel scroll down
-    executeCustomCommand: ':'
+    executeShellCommand: ':'
     createRebaseOptionsMenu: 'm'
     pushFiles: 'P'
     pullFiles: 'p'
@@ -170,7 +172,7 @@ keybinding:
     viewResetOptions: 'D'
     fetch: 'f'
     toggleTreeView: '`'
-    openMergeTool: 'M'
+    openMergeOptions: 'M'
     openStatusFilter: '<c-b>'
   branches:
     createPullRequest: 'o'
