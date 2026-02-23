@@ -69,12 +69,12 @@ preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 6
-inner.vertical =   6
-outer.left =       4
-outer.bottom =     4
-outer.top =        4
-outer.right =      48
+inner.horizontal = 4
+inner.vertical =   4
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      44
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -163,7 +163,7 @@ cmd-alt-h = [] # Disable "hide others"
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
-esc = ['reload-config', 'mode main']
+esc = ['reload-config', 'exec-and-forget sketchybar --reload', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
 
@@ -171,106 +171,71 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+alt-shift-r = ['exec-and-forget sketchybar --reload', 'mode main']
 
-# Floating windows
-[[on-window-detected]]
-if.app-id = 'com.apple.finder'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.findmy'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.Notes'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.Home'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.Photos'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.ActivityMonitor'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.reminders'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.MobileSMS'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.apple.AppStore'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.1password.1password'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.teamviewer.TeamViewer'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'org.qbittorrent.qBittorrent'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'us.zoom.xos'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.gather.GatherV2'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.autodesk.fusion360'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.bambulab.bambu-studio'
-run = 'layout floating'
-[[on-window-detected]]
-if.app-id = 'com.sketchup.SketchUp.2023'
-run = 'layout floating'
-
-# Default layouts
+# Tiled apps (assigned to workspaces)
 [[on-window-detected]]
 if.app-id = 'company.thebrowser.Browser'
-run = ['move-node-to-workspace 1']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = ['move-node-to-workspace 2']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 2']
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
-run = ['move-node-to-workspace 2']
+if.app-id = 'com.mitchellh.ghostty'
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 2']
 
 [[on-window-detected]]
 if.app-id = 'com.hnc.Discord'
-run = ['move-node-to-workspace 3']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 3']
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = ['move-node-to-workspace 3']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 3']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['move-node-to-workspace 4']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 4']
 [[on-window-detected]]
 if.app-id = 'com.linear'
-run = ['move-node-to-workspace 4']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-id = 'com.gather.GatherV2'
-run = ['move-node-to-workspace 5']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-id = 'com.figma.Desktop'
-run = ['move-node-to-workspace 6']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 6']
 
 [[on-window-detected]]
 if.app-id = 'md.obsidian'
-run = ['move-node-to-workspace 7']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id = 'com.sketchup.SketchUp.2023'
-run = ['move-node-to-workspace 8']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.autodesk.fusion360'
-run = ['move-node-to-workspace 8']
+check-further-callbacks = false
+run = ['layout floating', 'move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari.WebApp.2A9C615F-1974-45F8-8642-135EC778183C' #librechat
-run = ['move-node-to-workspace 9']
+check-further-callbacks = false
+run = ['layout tiling', 'move-node-to-workspace 9']
+
+# Everything else floats by default
+[[on-window-detected]]
+run = 'layout floating'
